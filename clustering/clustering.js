@@ -13,10 +13,9 @@ function initMap() {
   const markers = locations.map((location, i) => {
     return new google.maps.Marker({
       position: location,
-      label: labels[i % labels.length],
-      color: "green",
-    });
-  });
+      label: { labels[i % labels.length],
+              color: "green",}
+        });
   // Add a marker clusterer to manage the markers.
   new MarkerClusterer(map, markers, {
     imagePath:
