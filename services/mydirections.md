@@ -18,7 +18,9 @@ https://maps.googleapis.com/maps/api/directions/json?departure_time=1656676800&o
 
 
 ## Next paste the full JSON response to this query here:
-
+```JSON
+PASTE_YOUR_JSON_RESULTS_HERE
+``` 
 ____
 ## Rubric
 
