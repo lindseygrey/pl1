@@ -12,7 +12,7 @@ Be creative and use multiple parameters from the API documentation to earn a top
 
 ## Directions URL
 
-~Possible Bike Packing Trip for the Summer~
+*Possible Bike Packing Trip for the Summer*
 
 https://maps.googleapis.com/maps/api/directions/json?departure_time=1656676800&origin=place_id:ChIJxbfQ7E2LK4gR_8s0OX1AoeM&destination=place_id:ChIJT2TscKHYKYgRdDZj0cyy_RM&waypoints=place_id:ChIJk0UzV4SVK4gR1vGNrg6VNhM%7Cenc:g%7dunG~upoN%7dhIacI%7blJ%7bjE:&avoid=tolls%7Chighway%7Cferries&mode=bicycling&unit=metric&key=AIzaSyCM-WWHYHIKY-do4kquMy9Z4wQaQx51AuE
 
