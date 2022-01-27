@@ -52,7 +52,11 @@ function initMap() {
         ],
     map: map,
   });
-
+  const marker = new google.maps.Marker({
+    position: { lat: 43.868, lng: -78.790 },
+    map,
+    title: "Darlington Provincial Park",
+  });
   animateCircle(line);
 }
 
