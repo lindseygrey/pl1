@@ -34,14 +34,14 @@ function initMap() {
    const ArrowSymbol = { //creates arrow symbol for end of line
     path: google.maps.SymbolPath.FORWARD_OPEN_ARROW,
     scale: 8,
-        
-  var Dash = {
-  path: 'M 0,-1 0,1',
-  strokeOpacity: 1,
-  scale: 4
-};
+   };
+   const Dash = {
+    path: 'M 0,-1 0,1',
+    strokeOpacity: 1,
+    scale: 4
+   };
     
-  };
+ 
   // Create the polyline and add the symbol to it via the 'icons' property.
   const line = new google.maps.Polyline({
     path: [
