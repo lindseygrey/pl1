@@ -34,7 +34,7 @@ function initMap() {
      const ArrowSymbol = {
     path: google.maps.SymbolPath.FORWARD_OPEN_ARROW,
     scale: 8,
-    strokeColor: "#393",
+    
   };
   // Create the polyline and add the symbol to it via the 'icons' property.
   const line = new google.maps.Polyline({
@@ -48,7 +48,7 @@ function initMap() {
         offset: "0%",
       },
       {
-        icon: lineSymbol,
+        icon: ArrowSymbol,
         offset: "100%",
       },
     ],
