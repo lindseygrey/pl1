@@ -57,7 +57,14 @@ function initMap() {
     map,
     title: "Darlington Provincial Park",
   });
-  animateCircle(line);
+     
+     
+    marker.addListener("click", () => {
+    animateCircle(line);
+    map.setZoom(8);
+    map.setCenter(marker.getPosition());
+  });
+  
 }
 
 // Use the DOM setInterval() function to change the offset of the symbol
