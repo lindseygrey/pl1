@@ -19,6 +19,7 @@ https://maps.googleapis.com/maps/api/directions/json?departure_time=1656676800&o
 
 ## Next paste the full JSON response to this query here:
 ```JSON
+see mydirections.js file for full JSON response
 ```
 ____
 ## Rubric
