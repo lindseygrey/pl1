@@ -20,13 +20,14 @@
 function initMap() {
   const map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: 44.000, lng: -80.000 },
-    zoom: 10,
+    zoom: 8,
     mapTypeId: "terrain",
   });
   // Define the symbol, using one of the predefined paths ('CIRCLE')
   // supplied by the Google Maps JavaScript API.
+  // Changed shape to Arrow instead of line https://developers.google.com/maps/documentation/javascript/examples/overlay-symbol-arrow
   const lineSymbol = {
-    path: google.maps.SymbolPath.CIRCLE,
+    path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
     scale: 8,
     strokeColor: "#393",
   };
@@ -34,7 +35,7 @@ function initMap() {
   const line = new google.maps.Polyline({
     path: [
       { lat: 43.868, lng: -78.790 },
-      { lat: 18.291, lng: 153.027 },
+      { lat: 28.155, lng: -82.806},
     ],
     icons: [
       {
