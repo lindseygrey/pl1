@@ -148,11 +148,11 @@ function initMap() {
     });
     });
 
-    Mmarker.addListener("click", () => {
-      animateCircle(line);
-      map.setZoom(8);
-      map.setCenter(DPPmarker.getPosition());
-  });
+  //   Mmarker.addListener("click", () => {
+  //     animateCircle(line);
+  //     map.setZoom(8);
+  //     map.setCenter(DPPmarker.getPosition());
+  // });
 
   SBmarker.addListener("click", () => {
     SBinfowindow.open({
@@ -178,7 +178,8 @@ function initMap() {
 }
 document
     .getElementById("migrate")
-    .addEventListener("click", animateCircle(line));
+    .addEventListener("click", animateCircle);
+
 // Use the DOM setInterval() function to change the offset of the symbol
 // at fixed intervals.
 function animateCircle(line) {
