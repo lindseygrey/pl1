@@ -122,14 +122,15 @@ function initMap() {
   });
           
     DPPmarker.addListener("click", () => {
-      animateCircle(line);
-      map.setZoom(8);
-      map.setCenter(DPPmarker.getPosition());
       DPPinfowindow.open({
       anchor: DPPmarker,
       map,
       shouldFocus: false,
     });
+      animateCircle(line);
+      //map.setZoom(8);
+      //map.setCenter(DPPmarker.getPosition());
+
   });
   SBmarker.addListener("click", () => {
     SBinfowindow.open({
@@ -145,9 +146,9 @@ function initMap() {
       shouldFocus: false,
     });
   });
-  WBmarker.addListener("click", () => {
-    WBinfowindow.open({
-      anchor: WBmarker,
+  TTmarker.addListener("click", () => {
+    TTinfowindow.open({
+      anchor: TTmarker,
       map,
       shouldFocus: false,
     });
