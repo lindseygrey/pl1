@@ -14,6 +14,19 @@
           margin: 0;
           padding: 0;
         }
+        #floating-panel {
+          position: absolute;
+          top: 10px;
+          left: 25%;
+          z-index: 5;
+          background-color: #fff;
+          padding: 5px;
+          border: 1px solid #999;
+          text-align: center;
+          font-family: "Roboto", "sans-serif";
+          line-height: 30px;
+          padding-left: 10px;
+        }
     </style>
     <script>
        // This example adds an animated symbol to a polyline.
@@ -80,7 +93,7 @@ function initMap() {
     strokeColor: "#393",
     strokeOpacity: 1,
   };
-   const ArrowSymbol = { //creates arrow symbol for end of line
+   const ArrowSymbol = { //creates arrow symbol for end of line (ended up making this invisible anyway)
     path: google.maps.SymbolPath.FORWARD_OPEN_ARROW,
     scale: 8,
    };
@@ -91,7 +104,7 @@ function initMap() {
       { lat: 43.868, lng: -78.790 },
       { lat: 28.155, lng: -82.806},
     ],
-     strokeOpacity: 0,
+     strokeOpacity: 0, //made it invisible so the icon "flies"
      icons: [
       {icon: lineSymbol,
         offset: "0%",},
@@ -163,7 +176,9 @@ function initMap() {
     });
   });
 }
-
+document
+    .getElementById("migrate")
+    .addEventListener("click", animateCircle(line));
 // Use the DOM setInterval() function to change the offset of the symbol
 // at fixed intervals.
 function animateCircle(line) {
@@ -178,10 +193,13 @@ function animateCircle(line) {
     line.set("icons", icons);
   }, 20);
 }
-       </script>
+  </script>
     
   </head>
   <body>
+    <div id="floating-panel">
+      <input id="migrate" type="button" value="Migrate" />
+    </div>
     <div id="map"></div>
 
     <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
