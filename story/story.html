@@ -35,6 +35,18 @@ function initMap() {
   const DPPinfowindow = new google.maps.InfoWindow({
     content: DPPcontentString,
   });
+  const SBcontentString =
+    '<div id="content">' +
+    '<div id="siteNotice">' +
+    "</div>" +
+    '<h1 id="firstHeading" class="firstHeading">Darlington Provincial Park Nest</h1>' +
+    '<div id="bodyContent">' +
+    "<p>Power couple Mrs. Howards and Blue hatched and raised 4 chicks to fledge for the second year running in 2021. While Mrs. Howards flies faithfully south to Fred Howards park each winter, Blue was less then faithful this year and produced unsuccessful nests with two other female plovers on the beach </p>" +
+    "</div>" +
+    "</div>";
+  const SBinfowindow = new google.maps.InfoWindow({
+    content: SBcontentString,
+  });
   // Define the symbol, using one of the predefined paths ('CIRCLE')
   // supplied by the Google Maps JavaScript API.
   // Changed shape to Arrow instead of circle https://developers.google.com/maps/documentation/javascript/examples/overlay-symbol-arrow
@@ -95,6 +107,14 @@ function initMap() {
       shouldFocus: false,
     });
   });
+  SBmarker.addListener("click", () => {
+    SBinfowindow.open({
+      anchor: marker,
+      map,
+      shouldFocus: false,
+    });
+  });
+
   
 }
 
