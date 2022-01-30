@@ -39,13 +39,37 @@ function initMap() {
     '<div id="content">' +
     '<div id="siteNotice">' +
     "</div>" +
-    '<h1 id="firstHeading" class="firstHeading">Darlington Provincial Park Nest</h1>' +
+    '<h1 id="firstHeading" class="firstHeading">Sauble Beach Nest </h1>' +
     '<div id="bodyContent">' +
-    "<p>Power couple Mrs. Howards and Blue hatched and raised 4 chicks to fledge for the second year running in 2021. While Mrs. Howards flies faithfully south to Fred Howards park each winter, Blue was less then faithful this year and produced unsuccessful nests with two other female plovers on the beach </p>" +
+    "<p> First year Bo and Wasaga regular Nancy got a late start to the season in 2021. Three eggs made it to hatch, but the chicks were predated by opportunistic gulls and one unexpected Merlin. </p>" +
     "</div>" +
     "</div>";
   const SBinfowindow = new google.maps.InfoWindow({
     content: SBcontentString,
+  });
+  const WBcontentString =
+    '<div id="content">' +
+    '<div id="siteNotice">' +
+    "</div>" +
+    '<h1 id="firstHeading" class="firstHeading"> Wasaga Beach Nest </h1>' +
+    '<div id="bodyContent">' +
+    "<p> Reigning queen of Wasaga Beach Pepa teamed up with Fudge in 2021 to nest. Four eggs were laid, three hatched, but all three chicks fledged!</p>" +
+    "</div>" +
+    "</div>";
+  const WBinfowindow = new google.maps.InfoWindow({
+    content: WBcontentString,
+  });
+  const TTcontentString =
+    '<div id="content">' +
+    '<div id="siteNotice">' +
+    "</div>" +
+    '<h1 id="firstHeading" class="firstHeading">Tiny Township Nest </h1>' +
+    '<div id="bodyContent">' +
+    "<p> Flash (a captive raised Plover from America) and Mrs. Sunshine successfully laid two eggs, and raised 2 chicks to fledge in 2021</p>" +
+    "</div>" +
+    "</div>";
+  const TTinfowindow = new google.maps.InfoWindow({
+    content: TTcontentString,
   });
   // Define the symbol, using one of the predefined paths ('CIRCLE')
   // supplied by the Google Maps JavaScript API.
@@ -114,8 +138,20 @@ function initMap() {
       shouldFocus: false,
     });
   });
-
-  
+  WBmarker.addListener("click", () => {
+    WBinfowindow.open({
+      anchor: WBmarker,
+      map,
+      shouldFocus: false,
+    });
+  });
+  WBmarker.addListener("click", () => {
+    WBinfowindow.open({
+      anchor: WBmarker,
+      map,
+      shouldFocus: false,
+    });
+  });
 }
 
 // Use the DOM setInterval() function to change the offset of the symbol
