@@ -134,11 +134,11 @@ function initMap() {
     map,
     title: "Tiny Township Nest",
   });
-  const Mmarker = new google.maps.Marker({
-    position: { lat: 43.526, lng: -79.208 },
-    map,
-    title: "Migration of Mrs. Howards",
-  });
+  // const Mmarker = new google.maps.Marker({
+  //   position: { lat: 43.526, lng: -79.208 },
+  //   map,
+  //   title: "Migration of Mrs. Howards",
+  // });
           
     DPPmarker.addListener("click", () => {
       DPPinfowindow.open({
@@ -176,9 +176,12 @@ function initMap() {
     });
   });
 }
+map.addListener("click", (event) => {
+    animateCircle(line);
+  });
 document
     .getElementById("migrate")
-    .addEventListener("click", animateCircle);
+    .addEventListener("click", animateCircle(line));
 
 // Use the DOM setInterval() function to change the offset of the symbol
 // at fixed intervals.
