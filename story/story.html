@@ -100,7 +100,7 @@ function initMap() {
     DPPmarker.addListener("click", () => {
       animateCircle(line);
       map.setZoom(8);
-      map.setCenter(lineSymbol.getPosition());
+      map.setCenter(DPPmarker.getPosition());
       DPPinfowindow.open({
       anchor: DPPmarker,
       map,
