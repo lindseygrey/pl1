@@ -89,7 +89,7 @@ function initMap() {
       animateCircle(line);
       map.setZoom(8);
       map.setCenter(lineSymbol.getPosition());
-      infowindow.open({
+      DPPinfowindow.open({
       anchor: DPPmarker,
       map,
       shouldFocus: false,
@@ -108,7 +108,7 @@ function animateCircle(line) {
 
     const icons = line.get("icons");
 
-    icons[0].offset = count / 2 + "%";
+    icons[0].offset = count / 4 + "%";
     line.set("icons", icons);
   }, 20);
 }
