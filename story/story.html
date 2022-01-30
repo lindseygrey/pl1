@@ -109,7 +109,7 @@ function initMap() {
   });
   SBmarker.addListener("click", () => {
     SBinfowindow.open({
-      anchor: marker,
+      anchor: SBmarker,
       map,
       shouldFocus: false,
     });
