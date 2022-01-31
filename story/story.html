@@ -32,9 +32,9 @@
           top: 10px;
           left: 25%;
           z-index: 5;
-          background-color: #fff;
+          background-color: rgba(255, 255, 255, 0.329);
           padding: 5px;
-          border: 1px solid #999;
+          border: 1px solid rgba(153, 153, 153, 0);
           text-align: center;
           font-family: "Roboto", "sans-serif";
           line-height: 30px;
@@ -96,6 +96,18 @@ function initMap() {
     "</div>";
   const TTinfowindow = new google.maps.InfoWindow({
     content: TTcontentString,
+  });
+  const McontentString =
+    '<div id="content">' +
+    '<div id="siteNotice">' +
+    "</div>" +
+    '<h1 id="firstHeading" class="firstHeading">Tiny Township Nest </h1>' +
+    '<div id="bodyContent">' +
+    "<p> Flash (a captive raised Plover from America) and Mrs. Sunshine successfully laid two eggs, and raised 2 chicks to fledge in 2021</p>" +
+    "</div>" +
+    "</div>";
+  const Minfowindow = new google.maps.InfoWindow({
+    content: McontentString,
   });
   // Define the symbol, using one of the predefined paths ('CIRCLE')
   // supplied by the Google Maps JavaScript API.
@@ -165,6 +177,11 @@ function initMap() {
       animateCircle(line);
       map.setZoom(8);
       map.setCenter(Mmarker.getPosition());
+      Minfowindow.open({
+      anchor: Mmarker,
+      map,
+      shouldFocus: false,
+    });
   });
 
   SBmarker.addListener("click", () => {
