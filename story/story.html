@@ -124,20 +124,20 @@ function initMap() {
    };
  
   // Create the polyline and add the symbol to it via the 'icons' property.
-  const line = new google.maps.Polyline({
-    path: [
-      { lat: 43.868, lng: -78.790 },
-      { lat: 28.155, lng: -82.806},
-    ],
-     strokeOpacity: 0, //made it invisible so the icon "flies"
-     icons: [
-      {icon: lineSymbol,
-        offset: "0%",},
-      {icon: ArrowSymbol,
-        offset: "100%",},
-        ],
-    map: map,
-  });
+  // const line = new google.maps.Polyline({
+  //   path: [
+  //     { lat: 43.868, lng: -78.790 },
+  //     { lat: 28.155, lng: -82.806},
+  //   ],
+  //    strokeOpacity: 0, //made it invisible so the icon "flies"
+  //    icons: [
+  //     {icon: lineSymbol,
+  //       offset: "0%",},
+  //     {icon: ArrowSymbol,
+  //       offset: "100%",},
+  //       ],
+  //   map: map,
+  // });
 
   const DPPmarker = new google.maps.Marker({
     position: { lat: 43.868, lng: -78.790 },
@@ -147,21 +147,25 @@ function initMap() {
   });
   const SBmarker = new google.maps.Marker({
     position: { lat: 44.637, lng: -81.270 },
+    icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
     map,
     title: "Sauble Beach Nest",
   });
   const WBmarker = new google.maps.Marker({
     position: { lat: 44.526, lng: -80.017 },
+    icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
     map,
     title: "Wasaga Beach Nest",
   });
   const TTmarker = new google.maps.Marker({
     position: { lat: 44.564, lng: -79.996 },
+    icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
     map,
     title: "Tiny Township Nest",
   });
   const Mmarker = new google.maps.Marker({
     position: { lat: 43.526, lng: -79.208 },
+    icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
     map,
     title: "Migration of Mrs. Howards",
   });
@@ -175,6 +179,20 @@ function initMap() {
     });
 
     Mmarker.addListener("click", () => {
+      const line = new google.maps.Polyline({
+    path: [
+      { lat: 43.868, lng: -78.790 },
+      { lat: 28.155, lng: -82.806},
+    ],
+     strokeOpacity: 0, //made it invisible so the icon "flies"
+     icons: [
+      {icon: lineSymbol,
+        offset: "0%",},
+      {icon: ArrowSymbol,
+        offset: "100%",},
+        ],
+    map: map,
+  });
       animateCircle(line);
       map.setZoom(8);
       map.setCenter(Mmarker.getPosition());
