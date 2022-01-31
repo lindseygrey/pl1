@@ -32,7 +32,7 @@
           top: 10px;
           left: 25%;
           z-index: 5;
-          background-color: rgba(255, 255, 255, 0.329);
+          background-color: rgba(255, 255, 255, 0.514);
           padding: 5px;
           border: 1px solid rgba(153, 153, 153, 0);
           text-align: center;
@@ -101,9 +101,9 @@ function initMap() {
     '<div id="content">' +
     '<div id="siteNotice">' +
     "</div>" +
-    '<h1 id="firstHeading" class="firstHeading">Tiny Township Nest </h1>' +
+    '<h1 id="firstHeading" class="firstHeading">Migrate!</h1>' +
     '<div id="bodyContent">' +
-    "<p> Flash (a captive raised Plover from America) and Mrs. Sunshine successfully laid two eggs, and raised 2 chicks to fledge in 2021</p>" +
+    "<p> Follow Mrs. Howards Migration to Fred Howard Park in Florida!</p>" +
     "</div>" +
     "</div>";
   const Minfowindow = new google.maps.InfoWindow({
@@ -141,6 +141,7 @@ function initMap() {
 
   const DPPmarker = new google.maps.Marker({
     position: { lat: 43.868, lng: -78.790 },
+    icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
     map,
     title: "Darlington Provincial Park Nest",
   });
@@ -209,7 +210,7 @@ function initMap() {
 map.addListener("click", (event) => {
     animateCircle(line);
   });
-// document                                       Didn't work, don't know why
+// document                                     Intended to be a "Migrate" button,  Didn't work, don't know why
 //     .getElementById("migrate")
 //     .addEventListener("click", animateCircle(line));
 
