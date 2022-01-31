@@ -14,7 +14,7 @@
           margin: 0;
           padding: 0;
         }
-        #floating-panel {
+        /* #floating-panel {
           position: absolute;
           top: 10px;
           left: 25%;
@@ -26,7 +26,7 @@
           font-family: "Roboto", "sans-serif";
           line-height: 30px;
           padding-left: 10px;
-        }
+        } */
         #title{
           position: absolute;
           top: 10px;
@@ -42,7 +42,7 @@
         }
     </style>
     <script>
-       // This example adds an animated symbol to a polyline.
+       
 function initMap() {
   const map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: 44.000, lng: -80.000 },
@@ -147,11 +147,11 @@ function initMap() {
     map,
     title: "Tiny Township Nest",
   });
-  // const Mmarker = new google.maps.Marker({
-  //   position: { lat: 43.526, lng: -79.208 },
-  //   map,
-  //   title: "Migration of Mrs. Howards",
-  // });
+  const Mmarker = new google.maps.Marker({
+    position: { lat: 43.526, lng: -79.208 },
+    map,
+    title: "Migration of Mrs. Howards",
+  });
           
     DPPmarker.addListener("click", () => {
       DPPinfowindow.open({
@@ -161,11 +161,11 @@ function initMap() {
     });
     });
 
-  //   Mmarker.addListener("click", () => {
-  //     animateCircle(line);
-  //     map.setZoom(8);
-  //     map.setCenter(DPPmarker.getPosition());
-  // });
+    Mmarker.addListener("click", () => {
+      animateCircle(line);
+      map.setZoom(8);
+      map.setCenter(Mmarker.getPosition());
+  });
 
   SBmarker.addListener("click", () => {
     SBinfowindow.open({
@@ -192,9 +192,9 @@ function initMap() {
 map.addListener("click", (event) => {
     animateCircle(line);
   });
-document
-    .getElementById("migrate")
-    .addEventListener("click", animateCircle(line));
+// document                                       Didn't work, don't know why
+//     .getElementById("migrate")
+//     .addEventListener("click", animateCircle(line));
 
 // Use the DOM setInterval() function to change the offset of the symbol
 // at fixed intervals.
@@ -214,9 +214,9 @@ function animateCircle(line) {
     
   </head>
   <body>
-    <div id="floating-panel">
+    <!-- <div id="floating-panel">
       <input id="migrate" type="button" value="Migrate" />
-    </div>
+    </div> -->
      <div id="title">
        <h1>Piping Plover Nesting Locations, 2021</h1>
      </div>
