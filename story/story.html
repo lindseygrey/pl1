@@ -197,7 +197,7 @@ function initMap() {
       { lat: 43.868, lng: -78.790 },
       { lat: 28.155, lng: -82.806},
     ],
-     strokeOpacity: 0.5, //made it invisible so the icon "flies"
+     strokeOpacity: 0, //made it invisible so the icon "flies"
      icons: [
       {icon: lineSymbol,
         offset: "0%",},
@@ -238,8 +238,8 @@ function initMap() {
     });
   });
 }
-map.addListener("click", (event) => {
-    animateCircle(line);
+//map.addListener("click", (event) => {
+   // animateCircle(line);
   });
 // document                                     Intended to be a "Migrate" button,  Didn't work, don't know why
 //     .getElementById("migrate")
@@ -255,7 +255,7 @@ function animateCircle(line) {
 
     const icons = line.get("icons");
 
-    icons[0].offset = count / 4 + "%";
+    icons[0].offset = count / 2 + "%";
     line.set("icons", icons);
   }, 20);
 }
